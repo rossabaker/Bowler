@@ -13,8 +13,10 @@ class BowlerParentProject(info: ProjectInfo) extends ParentProject(info) {
   class BaseProject(info: ProjectInfo) extends DefaultProject(info) {
     //} with ChecksumPlugin{
     val slf4jVersion = "1.6.0"
+    val scalatraVersion = "2.0.0-SNAPSHOT"
+
     val scalatest = "org.scalatest" % "scalatest" % "1.3" % "test"
-    val scalatraTest = "org.scalatra" %% "scalatra-scalatest" % "2.0.0.M3" % "test"
+    val scalatraTest = "org.scalatra" %% "scalatra-scalatest" % scalatraVersion % "test"
     val jetty6 = "org.mortbay.jetty" % "jetty" % "6.1.14" % "test"
     val scalaCompiler = "org.scala-lang" % "scala-compiler" % "2.8.1"
     val servletApi = "javax.servlet" % "servlet-api" % "2.5" % "provided"
@@ -85,8 +87,8 @@ class BowlerParentProject(info: ProjectInfo) extends ParentProject(info) {
   }
 
   class CoreProject(info: ProjectInfo) extends BaseProject(info) {
-    val scalatra = "org.scalatra" %% "scalatra" % "2.0.0.M3"
-    val scalatraFileUpload = "org.scalatra" %% "scalatra-fileupload" % "2.0.0.M3"
+    val scalatra = "org.scalatra" %% "scalatra" % scalatraVersion
+    val scalatraFileUpload = "org.scalatra" %% "scalatra-fileupload" % scalatraVersion
     val commons = "com.recursivity" % "recursivity-commons_2.8.1" % "0.4.1"
     val scalate = "org.fusesource.scalate" % "scalate-core" % "1.4.1"
     // val liftJson = "net.liftweb" % "lift-json_2.8.1" % "2.2"
